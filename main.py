@@ -2,6 +2,8 @@
 from __future__ import annotations
 import argparse
 import pathlib
+import sys
+
 from App.config.settings import Settings
 from App.config.logger import get_logger
 from App.Functions.reader import leer_solo_tabla_csv_filtrado, file_fingerprint
@@ -30,7 +32,6 @@ def cli():
 
     csv_path = pathlib.Path(args.csv_path)
     df = leer_solo_tabla_csv_filtrado(str(csv_path))
-
     payload = build_json_para_n8n(df)
 
     if not args.no_send:
