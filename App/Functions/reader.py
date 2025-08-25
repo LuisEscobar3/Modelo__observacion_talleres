@@ -108,5 +108,5 @@ def leer_solo_tabla_csv_filtrado(ruta_csv: str) -> pl.DataFrame:
         .sort(["NUMERO SINIESTRO", "FECHA OBSERVACION"])
     )
 
-    df_filtrado = df_filtrado.head(200)
+    df_filtrado = df_filtrado.head(10)
     return df_filtrado
